@@ -1,0 +1,51 @@
+//کوچکترین بزرگترین و میانگین عضو های آرایه را چاپ کند
+
+
+import java.util.Scanner;
+
+public class Ex2_method {
+
+	public static void ex2m()
+	{
+		int sizeOfArray , min , max  , sum = 0;
+		float avg;
+		
+		System.out.print("Enter size of array :  ");
+		
+		Scanner input = new Scanner(System.in);
+		
+		sizeOfArray = input.nextInt();
+		
+		int[] array1 = new int[sizeOfArray];
+		
+		System.out.println("Enter array elements");
+		
+		for(int i = 0 ; i<sizeOfArray ; i++)
+		{
+			array1[i] = input.nextInt();
+			sum += array1[i];
+		}
+		avg = sum / (float) sizeOfArray;
+		min = array1[0];
+		max = array1[0];
+		
+		for(int i = 0 ; i<sizeOfArray ; i++)
+		{
+			if(array1[i] < min)
+				min = array1[i];
+			
+			if(array1[i] > max)
+				max = array1[i];
+			
+		}
+		
+		System.out.print(String.format("max is %d\nmin is %d\navg is %f", max , min , avg));
+	}
+	
+	public static void main(String[]args)
+	{
+		ex2m();
+	}
+}
+
+
